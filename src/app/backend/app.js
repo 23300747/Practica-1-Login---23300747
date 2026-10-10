@@ -14,6 +14,3 @@ app.use("/api", rutas);
 app.listen(process.env.PORT, () => {
   console.log(`Servidor ejecutandose en puerto ${process.env.PORT}`);
 });
-
-const bcrypt = require("bcrypt");
-console.log(bcrypt.hashSync("514", 10));

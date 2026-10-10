@@ -26,8 +26,10 @@ export class Login {
       next: (response) => {
         console.log('Inicio de sesión correcto:', response);
         // Guardar el token y el rol en el almacenamiento local
-        const respuesta = response as { token: string; rol: string };
+        const respuesta = response as { token: string; nombre: string; rol: string };
         this.authService.guardarToken(respuesta.token, respuesta.rol);
+        localStorage.setItem('correo', usuario.correo);
+        localStorage.setItem('nombre', respuesta.nombre);
         // Redirigir a la página de inicio o a otra página según sea necesario
         this.router.navigate(['/home']);
 

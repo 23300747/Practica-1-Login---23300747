@@ -11,15 +11,22 @@ import { AuthService } from '../../services/AuthService';
 
 export class Home {
   rol: string | null;
+  correo: string | null;
+  nombre: string | null;
+
   constructor(
     private authService: AuthService,
     private router: Router
   ) {
     this.rol = this.authService.obtenerRol();
+    this.correo = localStorage.getItem('correo');
+    this.nombre = localStorage.getItem('nombre');
   }
   //cierra sesin y redirige a login
   cerrarSesion() {
     this.authService.cerrarSesion();
+    localStorage.removeItem('correo');
+    localStorage.removeItem('nombre');
     this.router.navigate(['/login']);
   }
 }

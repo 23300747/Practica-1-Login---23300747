@@ -25,6 +25,16 @@
   color: #480202;
 }
 
+.datos-usuario {
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: left;
+}
+
+.datos-usuario p {
+  margin: 0.5rem 0;
+}
+
 .home-tarjeta button {
   padding: 0.7rem 1.4rem;
   border: none;
